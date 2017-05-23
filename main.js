@@ -1,8 +1,10 @@
 const fetch = require('node-fetch');
 
+const url = show =>
+  `https://api.tvmaze.com/singlesearch/shows?q=${show}&embed=episodes`;
+
 async function getRuntime(show) {
-  const url = `https://api.tvmaze.com/singlesearch/shows?q=${show}&embed=episodes`;
-  const res = await fetch(url);
+  const res = await fetch(url(show));
   const json = await res.json();
   const { episodes } = json._embedded;
   return sum(episodes.map(ep => ep.runtime));

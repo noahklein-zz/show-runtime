@@ -19,5 +19,7 @@ function args() {
   return rest;
 }
 
+const minutesToHours = min => Math.round(min / 60);
+
 const show = args().join(' ');
-getRuntime(show).then(console.log);
+getRuntime(show).then(minutesToHours).then(console.log);

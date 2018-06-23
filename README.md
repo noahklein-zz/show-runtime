@@ -1,10 +1,12 @@
 # show-runtime
+
 Get the running length of a show from the command line
 
 ## Usage
+
 ```bash
 $ yarn
-$ alias show-runtime="node --harmony /path/to/show-runtime/main.js"
-$ show-runtime mad men
+$ ln -s "$(pwd)/src/main.js" /usr/local/bin/show-runtime
+$ show-runtime Breaking Bad
 5520
 ```
